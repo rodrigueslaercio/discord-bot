@@ -13,7 +13,7 @@ class Client(commands.Bot):
     # overwriting the handler loading the cogs
     async def setup_hook(self):
                 await self.load_extension('cogs.ping_pong_cmd')
-                await self.load_extension('cogs.user_avatar_cmd')
+                await self.load_extension('cogs.user_cmd')
                 await self.tree.sync()
                 print("Cogs loaded successfully")
 
