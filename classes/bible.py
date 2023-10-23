@@ -39,5 +39,3 @@ class Bible:
                 return book['id']
         
         return 'Not found'
-    
-bible = Bible()
