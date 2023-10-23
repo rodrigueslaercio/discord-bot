@@ -15,8 +15,8 @@ class TestBible(unittest.TestCase):
 
     def test_check_book(self):
         bible = Bible()
-        want = 'JHN'
-        got = bible.check_book('John')
+        want = 'JHN.3.16'
+        got = bible.check_book('John 3:16')
         
         self.assertEqual(got, want)
 
