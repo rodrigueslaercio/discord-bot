@@ -6,7 +6,7 @@ class TestBible(unittest.TestCase):
 
     def test_http_status(self):
         bible = Bible()
-        bible.get_verse()
+        bible.get_verse('John 3:16')
         want = 200
         got = bible.status()
 
@@ -22,7 +22,7 @@ class TestBible(unittest.TestCase):
 
     def test_failing_check_book(self):
         bible = Bible()
-        want = 'Not found'
+        want = 'Not a well formed verse, please try again.'
         got = bible.check_book('Erro')
 
         self.assertEqual(got, want)
@@ -31,10 +31,10 @@ class TestBible(unittest.TestCase):
     # TODO
     def test_get_verse_text(self):
         bible = Bible()
-        want = '¶ For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.'
-        got = bible.get_verse()
+        want = '16¶ For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.'
+        got = bible.get_verse('John 3:16')
 
-        #self.assertEqual(got, want)
+        self.assertEqual(got, want)
 
 if __name__ == '__main__':
     unittest.main()
