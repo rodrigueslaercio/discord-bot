@@ -55,7 +55,7 @@ class Bible:
        except IndexError:
            return None
     
-    # returns differents url for http requests based on choice
+    # returns different urls for http requests based on choice
     def __url(self, choice):
         match choice:
             case 'verses':
