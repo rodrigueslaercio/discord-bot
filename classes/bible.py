@@ -5,12 +5,10 @@ load_dotenv()
 
 class Bible:
     """class for bible API requests"""
-    __code = 0
-    __API_KEY = os.getenv('API_KEY')
-    __HEADER = {'api-key': f"{__API_KEY}"}
-
     def __init__(self):
-        pass
+        self.__code = 0
+        self.__API_KEY = os.getenv('API_KEY')
+        self.__HEADER = {'api-key': f"{self.__API_KEY}"}
 
     def get_verse(self, name):
         verse_id = self.check_book(name)
