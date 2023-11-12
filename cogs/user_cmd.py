@@ -1,15 +1,15 @@
 from typing import Union
 from discord.ext import commands
 import discord 
-
-# user related commands
 class User(commands.Cog):
+    """class for user related commands"""
     def __init__(self, bot):
         self.bot = bot
 
     @commands.hybrid_command()
     @commands.cooldown(1, 10, commands.BucketType.user)
     async def user_avatar(self, ctx, *,  user: discord.User=None):
+        """sends the user avatar"""
         user = ctx.message.author if user == None else user
 
         avatar_url = user.avatar
@@ -22,6 +22,7 @@ class User(commands.Cog):
     @commands.hybrid_command()
     @commands.cooldown(1, 10, commands.BucketType.user)
     async def user_info(self, ctx, *, user: discord.User=None):
+        """sends the user info"""
         user = ctx.message.author if user == None else user 
 
         embed = discord.Embed(title=f"Info de {user.name}")
@@ -35,4 +36,5 @@ class User(commands.Cog):
     
 
 async def setup(client):
+    """adds the class to the cog handler"""
     await client.add_cog(User(client))

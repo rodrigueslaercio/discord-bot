@@ -2,6 +2,7 @@ from discord.ext import commands
 from classes.ping_pong import PingPong
 
 class PingPongCommand(commands.Cog):
+    """ping pong class just for testing"""
     def __init__(self, bot):
         self.bot = bot 
 
