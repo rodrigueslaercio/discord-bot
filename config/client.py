@@ -20,6 +20,7 @@ class Client(commands.Bot):
         """overwrites the handler loading the cogs"""
         await self.load_extension('cogs.ping_pong_cmd')
         await self.load_extension('cogs.user_cmd')
+        await self.load_extension('cogs.server_cmd')
         await self.tree.sync()
         print("Cogs loaded successfully")
 
