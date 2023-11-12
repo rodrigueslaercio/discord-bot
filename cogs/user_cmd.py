@@ -1,4 +1,3 @@
-from typing import Union
 from discord.ext import commands
 import discord 
 class User(commands.Cog):
